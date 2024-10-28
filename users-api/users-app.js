@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 
 app.post("/signup", async (req, res) => {
   // It's just a dummy service - we don't really care for the email
+  console.log("[users-service]: /signup endpoint called")
   const email = req.body.email;
   const password = req.body.password;
 
@@ -37,6 +38,7 @@ app.post("/signup", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   // It's just a dummy service - we don't really care for the email
+  console.log("[users-service]: /login endpoint called")
   const email = req.body.email;
   const password = req.body.password;
 

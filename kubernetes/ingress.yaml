@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: fe-service
+                port:
+                  number: 80
+          - path: /tasks/
+            pathType: Prefix
+            backend:
+              service:
+                name: tasks-service
+                port:
+                  number: 8000
+          - path: /login
+            pathType: Prefix
+            backend:
+              service: 
+                name: users-service
+                port:
+                  number: 8080

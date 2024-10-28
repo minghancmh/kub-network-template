@@ -12,6 +12,15 @@ spec:
       labels:
         app: tasks
     spec:
+      # initContainers:
+      #   - name: wait-for-auth
+      #     image: busybox
+      #     command:
+      #       [
+      #         "sh",
+      #         "-c",
+      #         'until nc -z -v -w30 auth-service.default 80; do echo "waiting for auth-service"; sleep 5; done;',
+      #       ]
       containers:
         - name: tasks
           image: minghan2000/kub-demo-tasks:latest

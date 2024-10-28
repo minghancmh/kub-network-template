@@ -15,3 +15,10 @@ spec:
       containers:
         - name: auth
           image: minghan2000/kub-demo-auth:latest
+          # readinessProbe:
+          #   httpGet:
+          #     path: /verify-token/abc
+          #     port: 80
+          #   initialDelaySeconds: 5
+          #   periodSeconds: 10
+          #   failureThreshold: 3
